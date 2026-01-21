@@ -1,5 +1,5 @@
 import os
-from google import genai
+import google.generativeai as genai
 
 class RootAgent:
     def __init__(self, system_prompt: str):
@@ -7,17 +7,15 @@ class RootAgent:
         if not api_key:
             raise RuntimeError("GOOGLE_API_KEY environment variable not set")
 
-        self.client = genai.Client(api_key=api_key)
+        genai.configure(api_key=api_key)
         self.system_prompt = system_prompt
-        self.model = "gemini-1.5-flash"
+        self.model = genai.GenerativeModel("gemini-1.5-flash")
 
     def run(self, user_input: str) -> str:
-        response = self.client.models.generate_content(
-            model=self.model,
-            config=genai.types.GenerateContentConfig(
-                system_instruction=self.system_prompt
-            ),
-            contents=user_input
+        response = self.model.generate_content(
+            [
+                {"role": "system", "parts": [self.system_prompt]},
+                {"role": "user", "parts": [user_input]},
+            ]
         )
-
         return response.text
