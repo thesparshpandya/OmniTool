@@ -27,9 +27,9 @@ def main():
             session_id=SESSION_ID
         )
     )
-    print("✅ Session Registered.")
+    print(" Session Registered.")
 
-    print("🤖 OmniTool (Google-native) — type 'exit' to quit")
+    print(" OmniTool (Google-native) — type 'exit' to quit")
 
     while True:
         try:
@@ -65,7 +65,7 @@ def main():
             print("\n")
 
         except Exception as e:
-            print(f"\n❌ Error details: {e}")
+            print(f"\n Error details: {e}")
             import traceback
             traceback.print_exc()
 
