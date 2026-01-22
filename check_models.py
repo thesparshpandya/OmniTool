@@ -1,4 +1,4 @@
-# Safe version - just prints names
+# This just prints names of available models in the API you are using
 import os
 from google import genai
 
