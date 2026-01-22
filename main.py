@@ -10,14 +10,14 @@ def main():
     SESSION_ID = "omnitool_session_01"
 
     # 2. Initialize the Engine
-    # We set app_name here so the runner knows which namespace to use.
+    # app_name is set here so the runner knows which namespace to use.
     runner = InMemoryRunner(
         agent=agent,
         app_name=APP_NAME
     )
 
     # 3. REGISTER THE SESSION (The Missing Step)
-    # We must explicitly save the session to the runner's internal "database"
+    # explicitly save the session to the runner's internal "database"
     # before we can use it. We use asyncio.run because create_session is async.
     print("⏳ Initializing session...")
     asyncio.run(
