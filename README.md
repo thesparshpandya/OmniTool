@@ -44,25 +44,25 @@ Before running the project, ensure you have:
 ## Installation
 
 1. **Clone the repository:**
-            ```bash
-            git clone https://github.com/thesparshpandya/OmniTool.git
-            cd omnitool
+    ```bash
+    git clone https://github.com/thesparshpandya/OmniTool.git
+    cd omnitool
 
-            ```
+    ```
 
 2. **Create a Virtual Environment (Recommended):**
-            ```bash
-            python -m venv venv
-            source venv/bin/activate  # On Windows use: venv\Scripts\activate
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
-            ```
+    ```
 
 
 3. **Install Dependencies:**
-            ```bash
-            pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
 
-            ```
+    ```
 
 
 *(Ensure `google-adk` and `google-genai` are in your requirements file)*
